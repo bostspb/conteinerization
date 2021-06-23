@@ -1,2 +1,40 @@
-# conteinerization
-GB: Микросервисная архитектура и контейнеризация
+# GB: Микросервисная архитектура и контейнеризация
+> **Geek University Data Engineering**
+
+`Docker` `Kubernetes` `CI/CD`
+
+https://github.com/adterskov/geekbrains-conteinerization
+
+### Урок 1. Микросервисы и контейнеры
+1. История появления микросервисной архитектуры
+2. Область применения микросервисов
+3. Паттерны разработки микросервисных приложений ([The Twelwe-Factor App](https://12factor.net/ru/), [GRASP](https://ru.wikipedia.org/wiki/GRASP))
+4. Containerization vs Virtualization
+5. Docker и аналоги
+
+
+### Урок 2. Docker
+1. Запуск контейнеров
+2. Создание образов
+3. Dockerfile
+4. Запуск мультисервисных окружений через `docker-compose`
+5. Оркестратор контейнеров
+
+
+**Задание** <br>
+Напишите Dockerfile к любому приложению из директорий `golang` или `python` на ваш выбор (можно к обоим).<br>
+Образ должен собираться из официального базового образа для выбранного языка. <br>
+На этапе сборки должны устанавливаться все необходимые зависимости, а так же присутствовать команда для запуска приложения.<br>
+Старайтесь следовать рекомендациям (Best Practices) из лекции при написании Dockerfile.<br>
+При запуске контейнера из образа с указанием проксирования порта (флаг `-p` или `-P` если указан `EXPOSE`) при обращении 
+на `localhost:port` должно быть доступно приложение в контейнере (оно отвечает `Hello, World!`).<br>
+Сохраните получившийся Dockerfile в любом публичном Git репозитории, например GitHub, и пришлите ссылку на репозиторий.<br>
+
+**Решение** <br>
+- [Dockerfile для приложения на Python](https://github.com/bostspb/conteinerization/blob/main/lesson02/python/Dockerfile)
+- [Dockerfile для приложения на Golang](https://github.com/bostspb/conteinerization/blob/main/lesson02/golang/Dockerfile)
+
+_Примечание_: 
+1. Осознанное отступление от Best Practices - использование `ADD` вместо `COPY` и неиспользование Volumes
+2. Сборка образа: `docker build . -t app:1.1`
+3. Запуск контейнера: `docker run -d -P app:1.1`
