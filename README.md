@@ -38,3 +38,21 @@ _Примечание_:
 1. Осознанное отступление от Best Practices - использование `ADD` вместо `COPY` и неиспользование Volumes
 2. Сборка образа: `docker build . -t app:1.1`
 3. Запуск контейнера: `docker run -d -P app:1.1`
+
+
+### Урок 3. Введение в Kubernetes
+1. Описание технологии
+2. Основные абстракции приложений
+    - Pod
+    - ReplicaSet
+    - Deployment
+3. Работа с kubectl
+
+**Задание** <br>
+Напишите deployment для запуска игры Kube DOOM.
+[Подробные условия](https://github.com/bostspb/conteinerization/blob/main/lesson03/task.md)
+
+**Решение** <br>
+- [Подробное описание хода выполнения задания](https://github.com/bostspb/conteinerization/blob/main/lesson03/README.md)
+- [Манифест с описанием абстракций](https://github.com/bostspb/conteinerization/blob/main/lesson03/kubedoom.yaml)
+- [Скриншот VNC Viewer с запущенной игрой](https://github.com/bostspb/conteinerization/blob/main/lesson03/screenshot.jpg)
