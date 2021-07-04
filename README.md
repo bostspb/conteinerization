@@ -56,3 +56,22 @@ _Примечание_:
 - [Подробное описание хода выполнения задания](https://github.com/bostspb/conteinerization/blob/main/lesson03/README.md)
 - [Манифест с описанием абстракций](https://github.com/bostspb/conteinerization/blob/main/lesson03/kubedoom.yaml)
 - [Скриншот VNC Viewer с запущенной игрой](https://github.com/bostspb/conteinerization/blob/main/lesson03/screenshot.jpg)
+
+
+### Урок 4. Хранение данных и ресурсы
+1. Ресурсы
+2. Хранение конфигураций
+    - Secret
+    - Configmap
+3. Персистентность
+    - Persistent Volume
+    - Persistent Volume Claim
+
+**Задание** <br>
+Напишите deployment для запуска сервера базы данных Postgresql.
+[Подробные условия](https://github.com/bostspb/conteinerization/blob/main/lesson04/task.md)
+
+**Решение** <br>
+- [Подробное описание хода выполнения задания и его проверки](https://github.com/bostspb/conteinerization/blob/main/lesson04/README.md)
+- [Манифест с описанием абстракции PersistentVolumeClaim](https://github.com/bostspb/conteinerization/blob/main/lesson04/pvc.yaml)
+- [Манифест с описанием абстракции Deployment](https://github.com/bostspb/conteinerization/blob/main/lesson04/deployment.yaml)
