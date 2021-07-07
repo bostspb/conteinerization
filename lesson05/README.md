@@ -90,4 +90,6 @@
 
 Внешний IP находится в `EXTERNAL-IP` у сервиса `nginx-ingress-controller` с типом `LoadBalancer`. 
 
-Открываем этот адрес в  браузере - [скриншот](https://github.com/bostspb/conteinerization/blob/main/lesson03/screenshot.jpg)
+Открываем этот адрес в  браузере 
+
+![скриншот](https://raw.githubusercontent.com/bostspb/conteinerization/main/lesson05/redmine-screenshot.jpg)
