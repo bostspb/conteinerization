@@ -75,3 +75,17 @@ _Примечание_:
 - [Подробное описание хода выполнения задания и его проверки](https://github.com/bostspb/conteinerization/blob/main/lesson04/README.md)
 - [Манифест с описанием абстракции PersistentVolumeClaim](https://github.com/bostspb/conteinerization/blob/main/lesson04/pvc.yaml)
 - [Манифест с описанием абстракции Deployment](https://github.com/bostspb/conteinerization/blob/main/lesson04/deployment.yaml)
+
+
+### Урок 5. Сетевые абстракции Kubernetes
+1. Service
+2. Проверки доступности
+3. Ingress
+4. Сетевые плагины
+
+**Задание** <br>
+Развернуть приложение Redmine с доступом из браузера по белому IP.
+[Подробные условия](https://github.com/bostspb/conteinerization/blob/main/lesson05/task.md)
+
+**Решение** <br>
+[Подробное описание хода выполнения задания и набор манифестов](https://github.com/bostspb/conteinerization/blob/main/lesson05)
