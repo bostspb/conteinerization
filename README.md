@@ -89,3 +89,27 @@ _Примечание_:
 
 **Решение** <br>
 [Подробное описание хода выполнения задания и набор манифестов](https://github.com/bostspb/conteinerization/blob/main/lesson05)
+
+
+### Урок 6. Устройство кластера
+1. Etcd
+2. Kube-API-server
+3. Kube-controller-manager
+4. Kube-scheduler
+5. Kubelet
+6. Kube-proxy
+
+
+### Урок 7. Продвинутые абстракции
+1. DaemonSet
+2. StatefulSet
+3. Job
+4. CronJob
+5. Horizontal Pod Autoscaler
+
+**Задание** <br>
+Развернуть в кластере сервер системы мониторинга Prometheus.
+[Подробные условия](https://github.com/bostspb/conteinerization/blob/main/lesson07/task.md)
+
+**Решение** <br>
+[Подробное описание хода выполнения задания и набор манифестов](https://github.com/bostspb/conteinerization/blob/main/lesson07)
