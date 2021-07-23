@@ -167,12 +167,17 @@ EXTERNAL-IP 87.239.108.221, пробуем сделать к нему запро
 > Переделайте шаг деплоя в **CI/CD**, который демонстрировался на лекции таким образом, 
 > чтобы при каждом прогоне шага **deploy** в кластер применялись манифесты приложения. 
 > При этом версия докер образа в деплойменте при апплае должна подменяться на ту, что была собрана в шаге **build**.
+
+> Так как окружений у нас два (**stage** и **prod**), то помимо образа при апплае из CI нам также было бы хорошо подменять **host** в `ingress.yaml`. 
  
 Вносим правки в `kube/deployment.yaml` - меняем `image: nginx:1.12` на `image: __IMAGE__`
+
+Вносим правки в `kube/ingress.yaml` - меняем значение в **host** на `__HOST__`
 
 Вносим правки в `.gitlab-ci.yml`, для деплоя добавляем строки
 
     - sed -i "s,__IMAGE__,$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG.$CI_PIPELINE_ID,g" kube/deployment.yaml
+    - sed -i "s,__HOST__,$CI_ENVIRONMENT_NAME,g" kube/ingress.yaml
     - kubectl apply -f kube/ --namespace $CI_ENVIRONMENT_NAME
 
 и удаляем строку
@@ -182,3 +187,25 @@ EXTERNAL-IP 87.239.108.221, пробуем сделать к нему запро
 Пушим изменения в репозиторий и смотрим пайплайн - пайплайн выполняется без ошибок
 
 ![пайплайн](https://raw.githubusercontent.com/bostspb/conteinerization/main/lesson08/home-task-01.jpg)
+
+Проверяем ответ нашего приложения, убеждаемся, что оно работает на обоих стендах
+
+    $ curl 87.239.108.221/users -H "Host: stage"
+    [{"ID":1,"CreatedAt":"2021-07-22T08:24:08.878442Z","UpdatedAt":"2021-07-22T08:24:08.878442Z","DeletedAt":null,"name":"Vasiya","city":"Vladivostok","age":34,"status":false}]
+    
+    $ curl 87.239.108.221/users -H "Host: prod"
+    []
+
+> Так же попробуйте протестировать откат на предыдущую версию, при возникновении ошибки при деплое
+
+Меняем значение переменной **DB_HOST** в `deployment.yaml` на **errortest**. 
+Пушим изменения и следим за работоспособностью приложения.
+
+Приложение отдает корректный ответ.
+Пайплайн CI свалился на этапе деплоймента и произвелся rollback:
+
+![деплоймент](https://raw.githubusercontent.com/bostspb/conteinerization/main/lesson08/home-task-02.jpg)
+
+Приложение продолжает отдавать корректный ответ.
+
+Возвращаем значение переменной **DB_HOST** в `deployment.yaml` и заливаем в репозиторий. 

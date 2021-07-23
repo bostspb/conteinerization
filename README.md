@@ -1,7 +1,7 @@
 # GB: Микросервисная архитектура и контейнеризация
 > **Geek University Data Engineering**
 
-`Docker` `Kubernetes` `CI/CD`
+`Docker` `Kubernetes` `CI/CD` `Gitlab`
 
 https://github.com/adterskov/geekbrains-conteinerization
 
@@ -113,3 +113,22 @@ _Примечание_:
 
 **Решение** <br>
 [Подробное описание хода выполнения задания и набор манифестов](https://github.com/bostspb/conteinerization/blob/main/lesson07)
+
+
+### Урок 8. Деплой тестового приложения в кластер, CI/CD
+1. CI/CD
+2. Gitlab
+3. Автоматизированная сборка
+4. Тестирование
+5. Деплой в Kubernetes
+
+**Задание** <br>
+Переделайте шаг деплоя в CI/CD, который демонстрировался на лекции
+таким образом, чтобы при каждом прогоне шага deploy в кластер применялись
+манифесты приложения. При этом версия докер образа в деплойменте при апплае
+должна подменяться на ту, что была собрана в шаге build.<br>
+[Подробные условия, часть 1](https://github.com/bostspb/conteinerization/blob/main/lesson08/task-part1.md) <br>
+[Подробные условия, часть 2](https://github.com/bostspb/conteinerization/blob/main/lesson08/task-part2.md)
+
+**Решение** <br>
+[Подробное описание хода выполнения задания](https://github.com/bostspb/conteinerization/blob/main/lesson08)
